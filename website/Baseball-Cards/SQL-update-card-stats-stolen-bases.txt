@@ -1,0 +1,13 @@
+SELECT c.player_name, c.year, b.yearID, cs.stolen_bases, b.SB 
+FROM card_stats cs, card c, batting b 
+where cs.card_id = c.card_id 
+and c.year - 1 = b.yearID 
+and c.playerID = b.playerID 
+and cs.stolen_bases <> b.SB;
+
+UPDATE card_stats cs, card c, batting b 
+SET cs.stolen_bases = b.SB
+where cs.card_id = c.card_id 
+and c.year - 1 = b.yearID 
+and c.playerID = b.playerID 
+and cs.stolen_bases <> b.SB

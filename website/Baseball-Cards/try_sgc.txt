@@ -1,0 +1,22 @@
+
+//Now try SGC
+			var settings = {
+			    "async": true,
+			    "crossDomain": true,
+				
+			   "url": "https://prod-customer-sgc-api.azurewebsites.net/v1/pop-report/getPopReportByCardSet",
+				"data": {cardSet: "1968 Topps", sport: "Baseball"},
+			    "method": "GET",
+			    "headers": {
+				  "authorization": "bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik1qVTVNMFkxT1RsRU5UUTBSVUU0TjBReFJqTTNNRE0zUlRGRU16Y3dPRFEwUkRRNE5qaEZNUSJ9.eyJpc3MiOiJodHRwczovL2xvZ2luLmdvc2djLmNvbS8iLCJzdWIiOiJhdXRoMHw2NTM4OTczYjEyYWM2MWVkY2I2ODdlM2EiLCJhdWQiOlsiaHR0cHM6Ly9hcGkuc2djY2FyZC5jb20iLCJodHRwczovL3NnY2NhcmQuYXV0aDAuY29tL3VzZXJpbmZvIl0sImlhdCI6MTcyMDU2MTI3MCwiZXhwIjoxNzIwNjExNjcwLCJzY29wZSI6Im9wZW5pZCBwcm9maWxlIGVtYWlsIiwiYXpwIjoibnZub2ZuQW5wOWVpNWNBQ05nODZyR2cwSGNqOE5BM2MifQ.Whs02tiBedNCHbwVrNdajT1lnfpWGEI2coaatsIg_NxjyDjVo2bHDDzdcjcoxYFVfa1MPe6j04U7Pokv_mq9EanXcA_iBG73ht48SIvb7MZs_gqpVOK36OmYycon40VPrlSnFeQrbrk8AwBzZf8z8jjdcznaw5RsVUpz1Hj4CPbYQxRcgVMxaWY4zeCyF1yrQHe3mJxfAbZ3Myrl5_nBXLd20GnHD5W_9Sy0c23SvACQ8eL5WeI27-u9TOpE2hLWRh8fWBAEpL3P5FjBSqOaKHz3s3Y0CGHFvKQ9gusmYfeHUU65-8vSpWyBi7LOZciBReHGbU7ceSm5vfr3gKVDBQ".
+				  "authority": "prod-customer-sgc-api.azurewebsites.net",
+				  "Content-Encoding": "gzip", "dataType" : "json"
+				  
+			     },
+			    
+			     
+			}
+			$.ajax(settings).done(function (response) {
+			    console.log(response);
+				
+			});

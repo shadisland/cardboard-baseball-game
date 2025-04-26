@@ -1,0 +1,105 @@
+//Pulled this out of card_game to use in jquery
+//Load teams Query    
+    		$stmt = $conn->prepare("
+    		
+    			SELECT distinct team_name, game_team_id, wins, losses, pitcher_card_id, catcher_card_id, first_base_card_id,second_base_card_id, short_stop_card_id, third_base_card_id, left_field_card_id, center_field_card_id, right_field_card_id, SUM(runs_for) as runs, SUM(runs_against) as runs_against FROM
+			(
+				SELECT gt.team_name, gt.game_team_id, gt.wins, gt.losses, pitcher_card_id, catcher_card_id, first_base_card_id,second_base_card_id, short_stop_card_id, third_base_card_id, left_field_card_id, center_field_card_id, right_field_card_id, SUM(total_runs_home) as runs_for, SUM(total_runs_away) as runs_against
+				FROM game_team gt, game g, game_season_team gst
+				WHERE gt.game_team_id = g.home_team_id
+				AND gst.game_season_id = ?
+				    GROUP BY gt.team_name, gt.wins, gt.losses
+				UNION ALL
+				SELECT gt.team_name, gt.game_team_id, gt.wins, gt.losses, pitcher_card_id, catcher_card_id, first_base_card_id,second_base_card_id, short_stop_card_id, third_base_card_id, left_field_card_id, center_field_card_id, right_field_card_id, SUM(total_runs_away) as runs_for, SUM(total_runs_home) as runs_against
+				FROM game_team gt, game g, game_season_team gst
+				WHERE gt.game_team_id = g.away_team_id
+				AND gst.game_season_id = ?
+				    GROUP BY gt.team_name, gt.wins, gt.losses
+			) t1
+			GROUP BY team_name, game_team_id, wins, losses, pitcher_card_id, catcher_card_id, first_base_card_id,second_base_card_id, short_stop_card_id, third_base_card_id, left_field_card_id, center_field_card_id, right_field_card_id
+			ORDER BY 3 DESC, 4 ASC, 14 DESC, 15 ASC ");
+
+    	
+ //Batting Leaders Query - Batting AVG
+ 			SELECT player_name, card_id, at_bats, hits, home_runs, strikeouts, walks, team_name, FORMAT(hits/(at_bats), 3) as batting_avg FROM 
+ 			(
+    				SELECT c.player_name, c.card_id, gps.at_bats, gps.hits, gps.home_runs, gps.strikeouts, gps.walks, gt.team_name, FORMAT(gps.hits/(gps.at_bats), 3) as batting_avg 
+				FROM game_player_stats gps, card c, game_team gt, game_season_team gst
+				WHERE gps.card_id = c.card_id 
+				AND gps.hits > 0 
+				AND gps.game_team_id = gt.game_team_id
+	                    	AND gt.game_season_id = 1
+					GROUP BY c.player_name, c.card_id, gps.at_bats, gps.hits, gps.home_runs, gps.strikeouts, gps.walks, gt.team_name
+			) t1
+			GROUP BY player_name, card_id, at_bats, hits, home_runs, strikeouts, walks, team_name
+			ORDER BY 9 DESC, 3 DESC
+			LIMIT 10 OFFSET 0
+			
+			
+SELECT gt.game_season_id, c.player_name, c.card_id, gps.at_bats, gps.hits, gps.home_runs, gps.strikeouts, gps.walks, gt.team_name 
+				FROM game_player_stats gps, card c, game_team gt
+				WHERE gps.card_id = c.card_id 
+				AND gps.hits > 0 
+				AND gps.game_team_id = gt.game_team_id
+	                    	AND gt.game_season_id = 1
+	                    	
+	                    	
+	                    	
+SELECT c.player_name, c.card_id, gps.at_bats, gps.hits, gps.home_runs, gps.strikeouts, gps.walks, gt.team_name, FORMAT(gps.hits/(gps.at_bats), 3) as batting_avg 
+				FROM game_player_stats gps, card c, game_team gt 
+				WHERE gps.card_id = c.card_id 
+				AND gps.hits > 0 
+				AND gps.game_team_id = gt.game_team_id
+				AND gt.game_season_id = 1
+				GROUP BY c.player_name, c.card_id, gps.at_bats, gps.hits, gps.home_runs, gps.strikeouts, gps.walks, gt.team_name
+				ORDER BY 9 DESC, 3 DESC
+			LIMIT 10 OFFSET 0
+			
+			
+//Season Games Played - Game matchup table Query			
+	SELECT gt.game_team_id, gt.team_name, g.away_team_id
+				FROM game g, game_team gt
+				WHERE gt.game_team_id = g.home_team_id   
+				AND g.game_season_id = ?
+				ORDER BY 1 ASC
+				
+//Load teams Query    
+			
+    		SELECT distinct team_name, game_team_id, pitcher_card_id, catcher_card_id, first_base_card_id,second_base_card_id, short_stop_card_id, third_base_card_id, left_field_card_id, center_field_card_id, right_field_card_id, COUNT( ) as total_wins, COUNT( ) as total_losses, SUM(runs_for) as runs, SUM(runs_against) as runs_against FROM
+			(
+			SELECT gt.team_name, gt.game_team_id, pitcher_card_id, catcher_card_id, first_base_card_id,second_base_card_id, short_stop_card_id, third_base_card_id, left_field_card_id, center_field_card_id, right_field_card_id, SUM(total_runs_home) as runs_for, SUM(total_runs_away) as runs_against
+			FROM game_team gt, game g
+			WHERE gt.game_team_id = g.home_team_id
+			AND g.game_season_id = ?
+			    GROUP BY gt.team_name
+			UNION ALL
+			SELECT gt.team_name, gt.game_team_id, pitcher_card_id, catcher_card_id, first_base_card_id,second_base_card_id, short_stop_card_id, third_base_card_id, left_field_card_id, center_field_card_id, right_field_card_id, SUM(total_runs_away) as runs_for, SUM(total_runs_home) as runs_against
+			FROM game_team gt, game g
+			WHERE gt.game_team_id = g.away_team_id
+			AND g.game_season_id = ?
+			    GROUP BY gt.team_name
+			) t1
+		GROUP BY team_name, game_team_id, wins, losses, pitcher_card_id, catcher_card_id, first_base_card_id,second_base_card_id, short_stop_card_id, third_base_card_id, left_field_card_id, center_field_card_id, right_field_card_id
+		ORDER BY 3 DESC, 4 ASC, 14 DESC, 15 ASC 
+		
+
+SELECT c.player_name, gps.card_id, gps.home_runs, gps.hits, gps.walks, gps.strikeouts, gps.at_bats, gt.team_name, FORMAT(gps.hits/(gps.at_bats), 3) as batting_avg 
+	FROM game_player_stats gps, card c, game_team gt 
+	WHERE gps.card_id = c.card_id 
+	AND gps.home_runs > 0 
+	AND gps.game_team_id = gt.game_team_id
+	AND gt.game_season_id = ?
+GROUP BY c.player_name, gps.card_id, gps.home_runs, gps.hits, gps.walks, gps.strikeouts, gps.at_bats, gt.team_name
+ORDER BY home_runs DESC, at_bats ASC, 9 DESC
+LIMIT 10 OFFSET 0
+
+
+SELECT c.player_name, c.card_id, gps.innings_pitched, gps.wins, gps.losses, gps.strikeouts_against, gps.walks_against, gt.team_name, FORMAT( (gps.runs_against * 9) / gps.innings_pitched, 3) as era
+				FROM game_player_stats gps, card c, game_team gt 
+				WHERE gps.card_id = c.card_id 
+				AND gps.innings_pitched >= (gt.wins + gt.losses)
+				AND gps.game_team_id = gt.game_team_id
+				AND gt.game_season_id = ?
+				GROUP BY c.player_name, c.card_id, gps.innings_pitched, gps.wins, gps.losses, gps.strikeouts_against, gps.walks_against, gt.team_name
+				ORDER BY 9 ASC, 3 DESC, 4 DESC
+				LIMIT 10 OFFSET 0

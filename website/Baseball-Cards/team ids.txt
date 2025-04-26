@@ -1,0 +1,25 @@
+
+
+boston
+89 P Luis Tiant
+62 C 1977 Carlton Fisk
+109 1B 1975 Cecil Cooper
+3 2B 2008 Dustin Pedroia
+199 3B 1957 Ted Lepcio
+202 SS 1953 John Lipon
+72 LF 1982 Jim Rice
+98 CF 1969 Carl Yastrzemski
+55 RF 1977 Fred Lynn
+201 DH 1957 Jackie Jensen
+
+STL
+17 P 1967 Bob Gibson
+185 C Joe Cunningham
+93 1B Lou Brock
+189 2B Ray Jablonski
+190 3B Bill Sarni
+73 SS Alan Trammell
+10 LF Stan Musial
+187 CF Rip Repulski
+188 RF Wally Moon
+94 DH Roberto Clemente 
