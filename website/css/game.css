@@ -1,0 +1,206 @@
+    body, label {
+    	cursor: url(/images/baseball-cursor-arrow.png), auto;
+    }
+    .link-button {	
+    	cursor: url(/images/baseball-cursor-arrow.png), auto;
+    }
+    th {
+    	text-align: center;
+    }
+    ul {
+	font-family: monospace;
+	font-size: 16px;
+	list-style: none;
+	margin: 10px 0px 0px 5px;
+	padding: 0;
+  	li {
+	    margin: 0;
+	    margin-bottom: 5px;
+	    padding-left: 12px;
+	    position: relative;
+    
+		&:after {
+		      content: '';
+		      height: 6px;
+		      width: 6px;
+		      background: darkblue;
+		      display: block;
+		      position: absolute;
+		      transform: rotate(45deg);
+		      top: 7px;
+		      left: 0;
+    		}
+    	}
+    }
+    .scoreboard-row td {
+    	border: 1px solid darkgray;
+    	max-height: 25px;
+ 	overflow: hidden;
+ 	white-space: nowrap;
+ 	padding: 3px;
+ 	width: 15px;
+    }
+    .scoreboard-row th {
+    	font-weight: 600; 
+    }
+    #outfield img {
+    	width: 120px;
+    }
+    #infield img {
+    	width: 120px;
+    }
+    #away-dugout img {
+    	width: 50px;
+    }
+    #home-dugout img {
+    	width: 50px;
+    }
+    #first-base img {
+    	width: 50px;
+	transform: rotate(45deg);
+	left: -20px;
+	top: -100px;
+    	box-shadow: 2px 2px 22px yellow;
+    }
+    #second-base img {
+    	width: 50px;
+    	transform: rotate(45deg);
+	right: 0px;
+	top: -70px;
+    	box-shadow: 2px 2px 22px yellow;
+    }
+    #third-base img {
+    	width: 50px;
+    	box-shadow: 2px 2px 22px yellow;
+    }
+    #batters-box-left img {
+    	width: 50px;
+    	/*left: -255px;
+	top: -245px;*/
+	left: -30px;
+	top: 0px;
+    	box-shadow: 2px 2px 22px yellow;
+    }
+    .enlarged-batter-away {
+    	width: 280px !important;
+    	left: -500px !important;
+    	top: -245px !important;
+    }
+    .enlarged-batter-home {
+    	width: 280px !important;
+    	left: 350px !important;
+    	top: -245px !important;
+    }
+    .raw {
+    	filter: brightness(120%) contrast(130%);
+    }
+    .PSA {
+    	filter: brightness(120%) contrast(130%);
+    }
+    .disabled-link-button {
+    	background-color: lightgray !important;
+    }
+    #out-type {
+    	font-weight: bold;
+    	font-size: 22px;
+    	color: darkred;
+    	text-shadow: 2px 2px 5px darkgray;
+    }
+    #hit-type {
+    	font-weight: bold;
+    	font-size: 26px;
+    	color: blue;
+    	text-shadow: 4px 4px 8px yellow;
+    }    
+    .Home-Run {
+    	font-size: 34px !important;
+    	font-weight: bold !important;
+    	color: yellow !important;
+  	text-shadow: 5px 5px 8px black, 0 0 50px blue, 0 0 25px darkblue !important;
+    }
+    .Walk {
+    	color: black !important;
+    }
+    .Strikeout {
+    	color: white !important;
+	text-shadow: 2px 2px 4px black, 0 0 25px red, 0 0 15px darkred !important;
+    }
+    @keyframes home-animation {
+      0%  { left:0px; top:0px;}
+      100% { left:-425px; top:-400px;}
+    }
+    @keyframes away-animation {
+      0%  { right:0px; top:0px;}
+      100% { right:-425px; top:-400px;}
+    }
+    .animated-home {
+    	animation-name: home-animation;
+    	animation-duration: 3s;
+	animation-delay: 1s;  
+    }
+    .animated-away {
+    	animation-name: away-animation;
+    	animation-duration: 3s;
+	animation-delay: 1s;  
+    }
+    #box-stats-table {
+    	border: 1px solid gray; 
+    	padding: 5px;
+    	margin-top: 10px;
+    }
+    #box-stats-table th{
+    	border: 0px solid gray; 
+    	padding: 5px;
+    }
+    #box-stats-table tr{
+    	border: 0px solid gray; 
+    	padding: 5px;
+    	text-align: center;
+    }
+    .season-standings-table {
+    	border: 1px solid gray; 
+    	padding: 5px;
+    	margin-top: 10px;
+    }
+    .season-standings-table th{
+    	border: 0px solid gray; 
+    	padding: 5px;
+    }
+    .season-standings-table tr{
+    	border: 0px solid gray; 
+    	padding: 5px;
+    	text-align: center;
+    }
+    .out-dot {
+      height: 13px;
+      width: 13px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      margin: 0px 3px 0px 3px;
+    }
+    .dot-on {
+      background-color: #cc0000 !important;
+    }
+    #scoreboard-top-inning {
+    	color: lightgreen;
+    }
+    #scoreboard-bottom-inning {
+    	color: lightgreen;
+    }
+    .scoreboard-extra-innings {
+    	letter-spacing: -3px;
+    	display: none;
+    }
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    
+    .fadeIn-animation {
+     	animation: 10s fadeIn;
+    }

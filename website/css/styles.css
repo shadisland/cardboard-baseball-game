@@ -1,0 +1,173 @@
+body {
+  /*background: linear-gradient(90deg, white, gray);*/
+  background-color: #eee;
+}
+
+body {
+  font-family: "Helvetica Neue", "Segoe UI", Segoe, Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: normal;
+  margin: 7px 0px 0px 0px;
+  padding: 0;
+  text-align: left;
+  /*color: #3e4532;*/ /*dark olive*/
+  color: #233655; /*dark blue*/
+}
+h1, p {
+  font-family: "Helvetica Neue", "Segoe UI", Segoe, Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: normal;
+  margin: 10px 0px 0px 10px;
+  padding: 0;
+  text-align: left;
+  /*color: #3e4532;*/ /*dark olive*/
+  color: #233655; /*dark blue*/
+}
+h2 {
+	/*margin: 10px 0px 10px 0px;*/
+	display: block;
+	font-size: 1.5em;
+	margin-block-start: 12px;
+	margin-block-end: 5px;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+	font-weight: bold;
+	unicode-bidi: isolate;
+}
+.container {
+  margin-left:  auto;
+  margin-right:  auto;
+  margin-top: 47px;
+  max-width: 1170px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.row:before, .row:after {
+  display: table;
+  content: " ";
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: 300;
+  margin: 0 0 20px 0;
+}
+
+.lead {
+  font-size: 21px;
+  font-weight: 200;
+  margin-bottom: 20px;
+}
+
+p {
+  margin: 0 0 10px;
+}
+
+a {
+  color: #3282e6;
+  text-decoration: none;
+}
+
+.nav {
+	background-image: url("/images/Shad-Island-Blue-Logo-100px.png");
+	background-repeat: no-repeat;
+	background-position: 7px 0px;
+	height: 105px;
+ 	padding-left: 0px;
+	padding-top: 0px;
+	margin-left: 0px;
+	image-rendering: -webkit-optimize-contrast;
+}
+
+.copyright {
+	padding: 20px 20px 20px 20px;
+}
+
+.grid-container {
+	margin-right: 20px;
+}
+#change-notification {
+	color: green; font-weight: bold;font-size: 16px;
+}
+#header {
+		text-align: left;
+	/* background-color: #585c4c; */
+	background-color: #3e4532;
+}
+#header2 {
+		text-align: left;
+	/*background-color: #3e4532; */
+	background-color: #3e4532;
+}
+	
+#header3 {
+		text-align: left;
+	background-color: #eee;
+}
+
+.splash {
+		width: 50%;
+		height: 400px;
+		padding: 0% 10%;
+}
+.splash li {
+		font-size: 25px;
+}
+.splash button {
+	background-color: #0C2340;
+	border: none;
+	color: white;
+	padding: 10px 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 20px;
+	margin: 6px 47px 4px 0px;
+	cursor: pointer;
+	position: relative;
+	float: right;
+}
+.link-button {
+	font: bold 14px Arial;
+	text-decoration: none;
+	background-color: #0C2340;
+	color: white;
+	padding: 5px 10px;
+	border: none
+}
+@font-face {
+  font-family: LHF_Ballpark_Script;
+  src: url(/fonts/LHF_Ballpark_Script.ttf);
+}
+@font-face {
+	  font-family: Bosox_Full;
+	  src: url(/fonts/Bosox_Full.ttf);
+}
+@font-face {
+	  font-family: Eurostile_MN_Extended_Bold;
+	  src: url(/fonts/Eurostile_MN_Extended_Bold.woff);
+}
+@font-face {
+	  font-family: The_Blendhes;
+	  src: url(/fonts/The_Blendhes.ttf);
+} 
+@font-face {
+	  font-family: BlacklightD_Regular;
+	  src: url(/fonts/BlacklightD_Regular.ttf);
+}
+@font-face {
+	  font-family: FabioloSmallCap-Light;
+	  src: url(/fonts/FabioloSmallCap-Light.otf);
+}
+@font-face {
+	  font-family: Adequate-ExtraLight;
+	  src: url(/fonts/Adequate-ExtraLight.ttf);
+}
+@font-face {
+	  font-family: PinesCountry-R99d3;
+	  src: url(/fonts/PinesCountry-R99d3.ttf);
+}
+@font-face {
+	  font-family: Overpass;
+	  src: url(/fonts/Overpass.ttf);
+}
+

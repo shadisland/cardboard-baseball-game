@@ -1,0 +1,150 @@
+
+body {
+	background-color: #FFFFFF  ;
+}
+a {
+	color: #0C2340  ;
+	font-weight: bold  ;
+}
+h1 {
+	font-weight: bold  ;
+}
+th {
+	color: #0C2340;
+	font-size: 25px  ;
+	border: 0px solid #FFF  ;
+	padding: 10px;
+}
+td {
+	color: #0C2340;
+	font-size: 25px  ;
+	border: 0px solid #FFF  ;
+	padding: 15px;
+}
+.nav {
+	opacity: 100%;
+	position: relative;
+	z-index: 400;
+}
+a.underlined-link {
+	text-decoration: underline;
+}
+.link-button {
+	border: 1px solid #0C2340  ;
+}
+#game-form-wrapper{
+	background-image: url(/images/Fenway-Park-1.jpg);
+	background-color: rgba(84, 121, 109, 0.99);
+  	background-blend-mode: luminosity;
+  	background-repeat: repeat;
+	z-index: 200;
+	height: 800px;
+	width: 100%;
+	opacity: 30%;
+	position: absolute;
+	top: 0;
+	left: 0;	
+}
+
+#game-form {
+	opacity: 100%;
+	position: absolute;
+	top: 140px;
+	left: 0px;
+	z-index: 400;
+	color: #0C2340  ;
+	padding-left: 20px;
+}
+#contentwrapper {
+	
+}
+#seasons-table {
+	border: 15px solid #0C2340  ;
+	border-radius: 17px;
+	padding: 10px 20px  ;
+	margin: 30px 20px 10px 30px;
+}
+#seasons-table-instructions {
+	font-weight: bold; 
+    	margin: 5px 5px 5px 23px;
+    	font-size: 20px;
+}
+#teams-table-instructions {
+	font-weight: bold; 
+   	margin: 5px 5px 5px 55px;
+   	text-shadow: 8px 8px 10px #FFF, -8px -8px 10px #FFF, -8px 8px 10px #FFF, 8px -8px 10px #FFF;
+}
+#teams-table {
+	border: 15px solid #0C2340;
+	border-radius: 17px;
+	padding: 10px 20px  ;
+	margin: 5px 20px 10px 30px;
+	background-color: rgba(84, 121, 109, 0.65);
+	background-blend-mode: luminosity;
+}
+#teams-table th, #teams-table td {
+	font-size: 16px;
+	padding: 5px;
+	color: white;
+}
+#green-space {
+	background-color: rgba(84, 121, 109, 0.99);
+	background-blend-mode: luminosity;
+	z-index: 200;
+	height: 800px;
+	width: 100%;
+	opacity: 30%;
+	position: absolute;
+	top: 800px;
+	left: 0;	
+}
+#season-teams, #team-players {
+	float: right;
+	border: 15px solid #0C2340  ;
+	border-radius: 17px;
+	margin-top: 30px;
+	padding: 15px 20px 20px 20px;
+	text-align: center;
+}
+#roster-table, #team-table {
+	border-collapse: collapse; 
+	border: 1px solid #0C2340  ;
+}
+#roster-table-x tr, #team-table tr {
+    background: rgba(84, 121, 109, 0.65);
+}
+#team-table tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.65);
+}
+#roster-table-x tr:nth-child(4n-1), #roster-table-x tr:nth-child(4n-2) {
+    background: rgba(255, 255, 255, 0.65) !important;
+}
+#roster-table th, #roster-table td, #bench-table td, #bench-table th{
+	font-size: 18px;
+	padding: 5px;
+	font-weight: bold;
+}
+#team-table th, #team-table td {
+	font-size: 20px;
+	padding: 5px;
+	font-weight: bold;
+}
+#game-team {
+    display:grid;
+    grid-template-columns: max-content max-content;
+    grid-gap:5px;
+} 
+#game-season label, #game-team label, #add-team label {
+	color: white !important;
+	font-weight: bold;
+	text-align:right; 
+}
+#season-div, #team-div {
+	float: left;
+	border: 15px solid #0C2340  ;
+	border-radius: 17px;
+	padding: 10px 20px  ;
+	margin: 30px 20px 10px 30px;
+	background-color: rgba(84, 121, 109, 0.65);
+	background-blend-mode: luminosity;
+}
