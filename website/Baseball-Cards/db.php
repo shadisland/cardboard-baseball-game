@@ -1,8 +1,8 @@
 <?php
 $host = 'p3nlmysql39plsk.secureserver.net';
 $db   = 'ph21100054196_';
-$user = 'collector';
-$pass = 'Piltocat22';
+$user = 'myuser';
+$pass = 'xyzxyz';
 $port = "3306";
 $charset = 'utf8mb4';
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset;port=$port";
